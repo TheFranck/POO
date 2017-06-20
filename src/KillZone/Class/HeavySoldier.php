@@ -41,7 +41,11 @@ class HeavySoldier extends Human
 
   public function receiveDamage($damage)
   {
-    # code...
+   if (($damage - $this->armor) <= 0) {
+     # code...
+   } else {
+     $this->pv = $this->get_pv() - ($damage - $this->armor);
+   }
   }
 
   private function regenerateEnergy()

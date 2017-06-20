@@ -74,8 +74,29 @@ require_once('RenderClass.php');
 
   public function fullcombat($soldier, $heavySoldier)
   {
+
+    $heavySoldierName = $heavySoldier->get_name();
+    $soldierName = $soldier->get_name();
+
     while (True) {
       $this->combatTurn($soldier, $heavySoldier);
+      if ($soldier->state() == False && $heavySoldier->state() == True) {
+        $this->render->success($heavySoldierName . " " . "a gagné");
+        return True;
+        // le marine a gagné
+      } elseif ($heavySoldier->state() == False && $soldier->state() == True) {
+        $this->render->success($soldierName . " " . "a gagné");
+        return True;
+        // heavy a gagné
+      } elseif ($heavySoldier->state() == False && $soldier->state() == False) {
+        $this->render->info( "Double Mort ");
+        return True;
+        //les 2 sont morts
+      } elseif ($heavySoldier->state() == True && $soldier->state() == True) {
+          $this->turn = $this->turn +1;
+          // les 2 sont vivants et on continue la fight
+      }
+      /*
       if ($soldier->state() == False || $heavySoldier->state() == False) {
         // C'est la fin du combat, on a vainqueur
         $this->render->success('Flawless Victory ');
@@ -84,8 +105,8 @@ require_once('RenderClass.php');
         // Les 2 sont dead, match nul
         $this->render->info(' Match Nul !! Mais Nul ');
         return True;
-      }
-      $this->turn = $this->turn +1;
+      }*/
+
     }
   }
 

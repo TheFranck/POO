@@ -4,8 +4,8 @@ require_once('Class/HeavySoldier.php');
 require_once('Class/CombatClass.php');
 require_once('Class/RenderClass.php');
 
-$ripley = new Soldier ('Sigourney Weaver', Human::MEDIUM_PV, Human::HIGH_POWER);
-$marcus = new HeavySoldier ('Marcus Phenix', Human::HIGH_PV, Human::LOW_POWER);
+$ripley = new Soldier ('Sigourney Weaver', Human::MEDIUM_PV, Human::MEDIUM_POWER);
+$marcus = new HeavySoldier ('Marcus Phenix', Human::HIGH_PV, Human::HIGH_POWER);
 
 $combat = new Combat();
 $combat->fullcombat($ripley, $marcus);
