@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #7B7FE8;
+  color:white;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  padding: 30px 10px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}

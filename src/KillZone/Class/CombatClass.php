@@ -85,7 +85,7 @@ require_once('RenderClass.php');
         return True;
         // le marine a gagné
       } elseif ($heavySoldier->state() == False && $soldier->state() == True) {
-        $this->render->success($soldierName . " " . "a gagné");
+        $this->render->success($soldierName . " " . "a gagné et a buté de l'alien");
         return True;
         // heavy a gagné
       } elseif ($heavySoldier->state() == False && $soldier->state() == False) {
