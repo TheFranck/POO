@@ -1,4 +1,5 @@
 <?php
+require_once('Models/OrmClass.php');
 class View
 {
   private $title;
@@ -8,6 +9,14 @@ class View
   private $templateExtension = '.html';
   private $templateBase = "templates/template.php";
   private $styleExtension = ".css";
+  private $orm;
+
+  public function __construct()
+  {
+  $this->orm = Orm::getInstance;
+  }
+
+
   public function loadHtml($fileName)
   {
     $html = " ";
